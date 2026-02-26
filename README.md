@@ -1,4 +1,4 @@
-# Stray Animal Rescue Management System
+# SafeTails: Stray Animal Rescue Management System
 A PHP & MySQL web application to manage stray animals, volunteers, rescues, adoptions, and medical records. Includes an admin panel with full CRUD functionality and a sample database for testing.
 ## Features
 - **Animal Management** – Add, update, and view animal details.  
