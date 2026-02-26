@@ -1,0 +1,150 @@
+<?php
+// CONNECT TO DB IF NEEDED LATER (optional)
+// $conn = new mysqli("localhost", "root", "", "stray_animal_rescue");
+?>
+
+<html>
+<head>
+    <title>Add Animal</title>
+
+    <style>
+        body {
+            background-image: url("img/all.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 40px 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* TOP NAVBAR */
+        .navbar {
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            padding: 15px 20px;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #4f3ea0;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            color: #5c4caf;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #4f3ea0;
+        }
+
+        /* FORM BOX */
+        .form-box {
+            width: 60%;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.86);
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.18);
+            text-align: center;
+        }
+
+        .header-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #6a4caf;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #3d3d3d;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus {
+            border-color: #6a4caf;
+            background: #faf7ff;
+            box-shadow: 0px 0px 6px rgba(106,76,175,0.3);
+            outline: none;
+        }
+
+        .button {
+            background: #58c48d;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-size: 17px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background: #48ac7a;
+            transform: scale(1.07);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="title">🐾 Admin Panel</div>
+    <div>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="view_animals.php">Animals</a>
+        <a href="view_rescue.php">Rescue</a>
+        <a href="view_volunteer.php">Volunteers</a>
+        <a href="view_adoption.php">Adoptions</a>
+        <a href="view_medical.php">Medical</a>
+    </div>
+</div>
+
+<div class="form-box">
+    <div class="header-icon">🐶</div>
+
+    <h1>Add Animal</h1>
+
+    <form action="insert_animal.php" method="POST">
+
+        <input type="text" name="type" placeholder="Animal Type (Dog, Cat, Cow...)" required>
+
+        <input type="text" name="name" placeholder="Animal Name" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="breed" placeholder="Breed" required>
+
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <input type="text" name="health" placeholder="Health Status" required>
+
+        <button class="button">Save Animal ➤</button>
+    </form>
+</div>
+
+</body>
+</html>
